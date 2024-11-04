@@ -56,8 +56,9 @@ func (app *application) render(w http.ResponseWriter, status int, page string, d
 	buf.WriteTo(w)
 }
 
-// Common dynamic data which is/can be used in all pages
+// Common dynamic data  data which is/can be used in all pages
 func (app *application) newTemplateData(r *http.Request) *templateData {
+	fmt.Println(r.URL)
 	return &templateData{
 		CurrentYear: time.Now().Year(),
 	}
