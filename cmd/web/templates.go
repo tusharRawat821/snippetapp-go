@@ -32,6 +32,7 @@ func newTemplateCache() (map[string]*template.Template, error) {
 
 	// Loop through the page filepaths one-by-one.
 	for _, page := range pages {
+
 		// Extract the file name (like 'home.tmpl') from the full filepath
 		// and assign it to the name variable.
 		name := filepath.Base(page)
