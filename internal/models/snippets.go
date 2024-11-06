@@ -4,6 +4,8 @@ import (
 	"database/sql"
 	"errors"
 	"time"
+
+	"snippetbox.tushar.net/internal/constants"
 )
 
 // db entity
@@ -44,7 +46,7 @@ func (m *SnippetModel) Get(id int) (*Snippet, error) {
 	if err != nil {
 		if errors.Is(err, sql.ErrNoRows) {
 			// returning our own sentinel error to abstract the datastore specific errors.
-			return nil, ErrNoRecord
+			return nil, constants.ErrNoRecord
 		} else {
 			return nil, err
 		}
