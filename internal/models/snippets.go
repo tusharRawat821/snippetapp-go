@@ -90,3 +90,6 @@ func (m *SnippetModel) Latest() ([]*Snippet, error) {
 
 // extension of db/sql pkg : https://jmoiron.github.io/sqlx/
 // transactions
+
+// processing forms : Post-Redirect-Get
+// get /snippet/create -> post snippet/create -> get snippet/view/:id
